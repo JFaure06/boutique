@@ -7,6 +7,10 @@
  */
 
 var_dump($_POST);
+
+if (isset($_POST) && !empty($_POST)){
+    echo "il y a des articles";
+}
 die();
 
 

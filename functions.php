@@ -19,7 +19,7 @@ function afficheArticle($article)
                 <h3 class="card-title"><?php echo $article["Nom"]; ?></h3>
                 <p class="card-text btn btn-primary"><?php echo $article["Prix"]; ?> $</p>
             </div>
-            <input type="checkbox" name="case" id="case" class="container-fluid d-flex justify-align-center"/>
+            <input type="checkbox" name="<?php echo $article["id"]; ?>" id="<?php echo $article["id"]; ?>" class="container-fluid d-flex justify-align-center"/>
             <label for="case">Add to Card</label>
         </div>
     </div>
@@ -28,5 +28,6 @@ function afficheArticle($article)
 }
 
 ?>
+
 
 
