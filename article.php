@@ -193,7 +193,7 @@ $sizeski = array("taille" => "<h6><strong>Tableau de taille :</strong></h6>
 <?php
     foreach ($articles as $value){
         if ($value["id"] == $produitid){
-            echo "trouve".$value["id"];
+            echo $value["id"];
 
 
 ?>

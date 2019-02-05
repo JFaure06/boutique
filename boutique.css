@@ -16,6 +16,18 @@
     background-repeat: no-repeat;
 }
 
+.card {
+
+}
+.caseclik{
+
+}
 h6{
     font-weight: bolder;
+}
+
+.footer {
+    height: 100px;
+    background-color: black;
+    color: azure;
 }
