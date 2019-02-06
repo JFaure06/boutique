@@ -43,13 +43,14 @@ function articlePanier($panier)
                 <h3 class="card-title"><?php echo $panier["Nom"]; ?></h3>
                 <p class="card-text btn btn-primary"><?php echo $panier["Prix"]; ?> $</p>
             </div>
-            <select name="nombre d'article">
-                <option value="choix1">1</option>
-                <option value="choix2">2</option>
-                <option value="choix3">3</option>
-                <option value="choix4">4</option>
+            <select name="qt<?php echo $panier["id"]; ?>">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
             </select>
-            <input type="submit" value="Add to card" class="btn btn-success">
+
+            <input type="checkbox" name="<?php echo $panier["id"]; ?>" id="<?php echo $panier["id"]; ?>" class="container-fluid d-flex justify-align-center"/>
         </div>
     </div>
 
@@ -58,7 +59,7 @@ function articlePanier($panier)
 ?>
 
 <?php
-/*
+
 function totalPanier(){
 $liste = $_POST();
    $total=0;
@@ -69,5 +70,4 @@ $liste = $_POST();
    return $total;
 }
 
-*/
 ?>

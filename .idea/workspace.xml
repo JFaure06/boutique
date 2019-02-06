@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bbaf698-4923-46ce-aac6-c8e8fd3e0bef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database_WSFIA.php" afterDir="false" />
+    <list default="true" id="7bbaf698-4923-46ce-aac6-c8e8fd3e0bef" name="Default Changelist" comment="création d'un fichier data,&#10;création fonction pour l'affichage de mon panier,&#10;et affichage de celui ci si un ou plusieurs éléments sont séléctioné">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/article.php" beforeDir="false" afterPath="$PROJECT_DIR$/article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boutique.css" beforeDir="false" afterPath="$PROJECT_DIR$/boutique.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/panier.php" beforeDir="false" afterPath="$PROJECT_DIR$/panier.php" afterDir="false" />
     </list>
@@ -30,8 +26,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database_WSFIA.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-end-line="7" selection-end-column="9" />
+            <state relative-caret-position="154">
+              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+              <folding>
+                <element signature="e#6#86#0#PHP" />
+                <element signature="n#p#0;n#!!top" />
+                <element signature="n#p#1;n#!!top" />
+                <element signature="n#p#3;n#!!top" />
+                <element signature="n#p#3;n#!!top" />
+                <element signature="n#p#6;n#!!top" />
+                <element signature="n#ul#0;n#!!top" />
+                <element signature="n#p#2;n#!!top" />
+                <element signature="n#p#0;n#!!top" />
+                <element signature="n#p#2;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -39,7 +47,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/boutique.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1034">
+            <state relative-caret-position="535">
               <caret line="52" column="48" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="48" />
             </state>
           </provider>
@@ -48,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/catalogue.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="96" column="45" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
+            <state relative-caret-position="425">
+              <caret line="96" column="81" lean-forward="true" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -63,23 +71,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="565">
-              <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="-15">
+              <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/panier.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="78" column="44" lean-forward="true" selection-start-line="78" selection-start-column="44" selection-end-line="78" selection-end-column="44" />
+            <state relative-caret-position="858">
+              <caret line="86" column="12" lean-forward="true" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="12" />
+              <folding>
+                <element signature="e#6#86#0#PHP" />
+                <element signature="n#head#0;n#html#0;n#!!top" />
+                <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,8 +124,8 @@
         <option value="$PROJECT_DIR$/catalogue.php" />
         <option value="$PROJECT_DIR$/article.php" />
         <option value="$PROJECT_DIR$/database_WSFIA.php" />
-        <option value="$PROJECT_DIR$/panier.php" />
         <option value="$PROJECT_DIR$/functions.php" />
+        <option value="$PROJECT_DIR$/panier.php" />
       </list>
     </option>
   </component>
@@ -153,7 +163,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.CoffeeScript" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -179,12 +189,12 @@
       <updated>1549352294335</updated>
       <workItem from="1549352295477" duration="6119000" />
       <workItem from="1549361652718" duration="14447000" />
-      <workItem from="1549438595193" duration="16389000" />
+      <workItem from="1549438595193" duration="21503000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36955000" />
+    <option name="totallyTimeSpent" value="42069000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -197,11 +207,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1853" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14111787" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" weight="0.3293348" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -223,6 +233,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="création d'un fichier data,&#10;création fonction pour l'affichage de mon panier,&#10;et affichage de celui ci si un ou plusieurs éléments sont séléctioné" />
+    <option name="LAST_COMMIT_MESSAGE" value="création d'un fichier data,&#10;création fonction pour l'affichage de mon panier,&#10;et affichage de celui ci si un ou plusieurs éléments sont séléctioné" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/projet-boutique.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -231,31 +245,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/boutique.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/boutique.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1034">
+        <state relative-caret-position="535">
           <caret line="52" column="48" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/catalogue.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="96" column="45" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database_WSFIA.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-end-line="7" selection-end-column="9" />
+        <state relative-caret-position="154">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <folding>
+            <element signature="e#6#86#0#PHP" />
+            <element signature="n#p#0;n#!!top" />
+            <element signature="n#p#1;n#!!top" />
+            <element signature="n#p#3;n#!!top" />
+            <element signature="n#p#3;n#!!top" />
+            <element signature="n#p#6;n#!!top" />
+            <element signature="n#ul#0;n#!!top" />
+            <element signature="n#p#2;n#!!top" />
+            <element signature="n#p#0;n#!!top" />
+            <element signature="n#p#2;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -266,19 +278,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/panier.php">
+    <entry file="file://$PROJECT_DIR$/catalogue.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="78" column="44" lean-forward="true" selection-start-line="78" selection-start-column="44" selection-end-line="78" selection-end-column="44" />
+        <state relative-caret-position="425">
+          <caret line="96" column="81" lean-forward="true" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/boutique.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
+        <state relative-caret-position="-15">
+          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="86" column="12" lean-forward="true" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="12" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#6#86#0#PHP" />
+            <element signature="n#head#0;n#html#0;n#!!top" />
+            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>

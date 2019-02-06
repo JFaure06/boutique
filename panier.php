@@ -10,11 +10,6 @@ include_once 'database_WSFIA.php';
 var_dump($_POST);
 
 /* */
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +22,8 @@ var_dump($_POST);
     <title>Waterski and French in The Alps</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu Condensed" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
           crossorigin="anonymous">
     <link rel="stylesheet" href="boutique.css">
 </head>
@@ -71,21 +67,24 @@ var_dump($_POST);
 </header>
 
 <main>
-    <p class="mt-2">Commande :</p>
-    <?php
-
-    foreach ($articles as $panier){
-        /* si dans ma recherche pas clé existe j'affiche*/
-        if (array_key_exists($panier["id"], $_POST)){
-        articlePanier($panier);
+    <frorm method="post" action="panier.php">
+        <p class="mt-2">Commande :</p>
+        <?php
+        $total = 0;
+        foreach ($articles as $panier) {
+            /* si dans ma recherche pas clé existe j'affiche*/
+            if (array_key_exists($panier["id"], $_POST)) {
+                articlePanier($panier);
+                $total += $panier["Prix"];
+            }
+            /*if (isset($_POST) && !empty($_POST)) {
+            echo ;
+            }*/
         }
-        /*if (isset($_POST) && !empty($_POST)) {
-        echo ;
-        }*/
-    }
-    die();
-    ?>
-
+        echo $total. " $";
+        ?>
+        <input type="submit" value="refresh" class="btn btn-dark">
+    </frorm>
 </main>
 
 </body>
