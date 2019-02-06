@@ -5,13 +5,14 @@
  * Date: 05/02/19
  * Time: 11:42
  */
-
+include_once 'functions.php';
+include_once 'database_WSFIA.php';
 var_dump($_POST);
 
-if (isset($_POST) && !empty($_POST)){
-    echo "il y a des articles";
-}
-die();
+/* */
+
+
+
 
 
 ?>
@@ -59,9 +60,9 @@ die();
                 <h2 class="order-3 text-info text-secondary">Waterski and French in The Alps</h2>
             </div>
 
-            <div class="col-md-8 container-fluid d-flex align-items-center order-2 order-md-2">
+            <div class="col-md-8 container-fluid d-flex justify-content-between order-2 order-md-2">
                 <div>
-                    <img src="" class="img-fluid" alt="logo">>
+                    <img src="photo/2b4ebdbcc4e8e39c19c1cf926e25dfbc.png" class="img-fluid" alt="logo">
                 </div>
             </div>
 
@@ -70,8 +71,20 @@ die();
 </header>
 
 <main>
+    <p class="mt-2">Commande :</p>
+    <?php
 
-
+    foreach ($articles as $panier){
+        /* si dans ma recherche pas clé existe j'affiche*/
+        if (array_key_exists($panier["id"], $_POST)){
+        articlePanier($panier);
+        }
+        /*if (isset($_POST) && !empty($_POST)) {
+        echo ;
+        }*/
+    }
+    die();
+    ?>
 
 </main>
 
