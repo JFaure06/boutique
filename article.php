@@ -64,7 +64,7 @@ $produitid = $_GET['id'];
 
                     Notre gamme de ski de slalom de compétition 100% carbone et ultra léger.
 
-                    Vous pouvez contacter directement notre conseiller (coatch de ski nautique) qui répondra à toutes
+                    Vous pouvez contacter directement notre conseiller (coach de ski nautique) qui répondra à toutes
                     vos questions techniques et vous proposera un devis complet et adapté à votre gabarit, niveau et
                     budget. </p>
             </div>

@@ -30,12 +30,12 @@ function afficheArticle($article)
 ?>
 <?php
 
-function articlePanier($panier)
+function articlePanier($panier, $quantite)
 {
     ?>
 
     <div class="d-flex justify-content-center">
-        <div class="card text-center shadow p-3 mb-5 bg-grey rounded row" style="width: 100rem;">
+        <div class="card text-center shadow p-3 mb-5 bg-grey rounded row" style="width: 50rem;">
 
                 <img src="<?php echo $panier["url"]; ?>" class="card-img-top img-article" alt="photo_Ski">
 
@@ -43,14 +43,18 @@ function articlePanier($panier)
                 <h3 class="card-title"><?php echo $panier["Nom"]; ?></h3>
                 <p class="card-text btn btn-primary"><?php echo $panier["Prix"]; ?> $</p>
             </div>
+
+
             <select name="qt<?php echo $panier["id"]; ?>" class="w-25">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+
+                <option <?php if ($quantite == 1) {echo "selected";}?> value="1" >1</option>
+                <option <?php if ($quantite == 2) {echo "selected";}?> value="2">2</option>
+                <option <?php if ($quantite == 3) {echo "selected";}?> value="3">3</option>
+                <option <?php if ($quantite == 4) {echo "selected";}?> value="4">4</option>
             </select>
 
             <input type="hidden" name="<?php echo $panier["id"]; ?>" id="<?php echo $panier["id"]; ?>" value="on" class="container-fluid d-flex justify-align-center"/>
+            <input type="submit" value="delete" name="delete<?php echo $panier["id"]; ?>" class="btn btn-danger w-25">
         </div>
     </div>
 

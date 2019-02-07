@@ -111,3 +111,9 @@ Ce ski a la caractéristique de tourner très rond, idéal pour tous les skieurs
 
 </body>
 </html>
+
+<?php
+for ($i = 0; $i < 10; $i++) {
+    echo '<option '' value="'.$i.'>'.$i.'</option>';
+                }
+?>

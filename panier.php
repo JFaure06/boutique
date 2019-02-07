@@ -7,7 +7,14 @@
  */
 include_once 'functions.php';
 include_once 'database_WSFIA.php';
-var_dump($_POST);
+
+
+if (isset($_POST["qt"])){
+
+}else {
+    $select=1;
+}
+
 /* */
 ?>
 
@@ -76,20 +83,33 @@ var_dump($_POST);
             /* si dans ma recherche pas clé existe j'affiche*/
             if (array_key_exists($panier["id"], $_POST)) {
                 /*j'appel ma fonction*/
-                articlePanier($panier);
-                $quantite = "qt".$panier["id"];
-                var_dump($_POST[$quantite]);
-                //$total += $panier["Prix"] * $_POST["qt"];
+
+                $quantite = "qt" . $panier["id"];
+                $delete = "delete" . $panier["id"];
+
+                if (isset($_POST[$delete])){
+                    echo "delete";
+                }
+
+                articlePanier($panier, $_POST[$quantite]);
+
+                if (isset($_POST[$quantite])) {
+                    $total += $panier["Prix"] * $_POST[$quantite];
+                }else {
+                    $total += $panier["Prix"];
+                }
+
             }
 
         }
-        if (isset($_POST["qt"])){
-            var_dump($_POST);
+        //var_dump($_POST);
+        //if (isset($_POST["qt"])){
+            //var_dump($_POST);
 
-            die();
-        }else{
-            echo "wtf ";
-        }
+           // die();
+       // }else{
+            //echo "wtf ";
+        //}
         /*if (isset($_POST) && !empty($_POST)) {
            echo ;
            }*/
