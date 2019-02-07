@@ -128,4 +128,5 @@ $sizeski = array("taille" => "<h6><strong>Tableau de taille :</strong></h6>
 67\" (170 cm) entre 72 et 85kg<br>
 68\" (173 cm) + 85kg</p>");
 
+
 ?>

@@ -34,23 +34,23 @@ function articlePanier($panier)
 {
     ?>
 
-    <div class="col-md-6">
-        <div class="card text-center shadow p-3 mb-5 bg-grey rounded" style="width: 50rem;">
-            <a href="article.php?id=<?php echo $panier["id"]; ?>">
+    <div class="d-flex justify-content-center">
+        <div class="card text-center shadow p-3 mb-5 bg-grey rounded row" style="width: 100rem;">
+
                 <img src="<?php echo $panier["url"]; ?>" class="card-img-top img-article" alt="photo_Ski">
-            </a>
+
             <div class="card-body">
                 <h3 class="card-title"><?php echo $panier["Nom"]; ?></h3>
                 <p class="card-text btn btn-primary"><?php echo $panier["Prix"]; ?> $</p>
             </div>
-            <select name="qt<?php echo $panier["id"]; ?>">
+            <select name="qt<?php echo $panier["id"]; ?>" class="w-25">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
             </select>
 
-            <input type="checkbox" name="<?php echo $panier["id"]; ?>" id="<?php echo $panier["id"]; ?>" class="container-fluid d-flex justify-align-center"/>
+            <input type="hidden" name="<?php echo $panier["id"]; ?>" id="<?php echo $panier["id"]; ?>" value="on" class="container-fluid d-flex justify-align-center"/>
         </div>
     </div>
 
@@ -65,7 +65,7 @@ $liste = $_POST();
    $total=0;
    foreach ($liste as $panier);
    {
-      $total += $panier["prix"] * $panier["qt"];
+      $total += $panier["prix"] * $_POST["qt"];
    }
    return $total;
 }
