@@ -6,10 +6,16 @@
  * Time: 10:43
  */
 
-include_once 'database_WSFIA.php';
+include_once 'Include/database_WSFIA.php';
+include_once 'Include/functions.php';
+include_once 'Include/function_Database.php';
+
 
 var_dump($_GET);
 $produitid = $_GET['id'];
+
+$db = MaConnexion();
+$article = GetProduit2($db, $produitid);
 
 ?>
 
@@ -32,76 +38,29 @@ $produitid = $_GET['id'];
 <body>
 
 <!--HEADER -->
+<?php include 'Header.php'; ?>
 
-<header class="header-home ">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="boutique.php"><i class="material-icons text-warning">home</i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="produits.php">Produits</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="contact.php">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container-fluid mt-5 pt-5">
 
-        <div class="row p-2 d-flex flex-column flex-md-row">
-
-            <div class="col-md-4 align-items-center order-1 order-md-1">
-                <h2 class="text-info text-secondary">SKIS DE SLALOM</h2>
-            </div>
-
-            <div class="col-md-8 container-fluid d-flex align-items-center order-2 order-md-2">
-                <p class="">Découvrez un grand choix de ski de slalom pour homme, femme et enfant. Que vous soyez
-                    amateur ou compétiteur, vous trouverez une large gamme de monoskis nautique parmi les plus grandes
-                    marques comme D3, Radar et HO.
-
-                    Notre gamme de ski de slalom de compétition 100% carbone et ultra léger.
-
-                    Vous pouvez contacter directement notre conseiller (coach de ski nautique) qui répondra à toutes
-                    vos questions techniques et vous proposera un devis complet et adapté à votre gabarit, niveau et
-                    budget. </p>
-            </div>
-
-        </div>
-    </div>
-</header>
+<main>
 <?php
-    foreach ($articles as $value){
-        if ($value["id"] == $produitid){
-            echo $value["id"];
+
+
+            afficheArticle($article);
 
 
 ?>
-<main>
-    <h1 class="text-center titreArticle"><?php echo $value ["Nom"] ?></h1>
-    <div class="container-fluid mt-5">
-        <div class="row d-flex align-items-center">
-            <img src="<?php echo $value ["url"]; ?>" class="img-fluid col-md-3 order-1">
 
-            <article class="col-md-9 justify-items-center order-2">
-                <p><?php echo $value ["desc"] ?><br><?php echo $value ["size"] ?></p>
-                <p><?php echo $sizeski ["taille"] ?></p>
-            </article>
-        </div>
-    </div>
-    <div class="text-center">
-        <p class="btn btn-primary btn-lg mt-5 "><?php echo $value ["Prix"] ?>$</p>
-    </div>
+
+
+
 
 
 </main>
-<?php
-        }
 
-    }
-?>
+<!--FOOTER -->
+<?php include 'Footer.php'; ?>
+
+
 </body>
 </html>
 

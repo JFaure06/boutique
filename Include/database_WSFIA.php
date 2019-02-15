@@ -5,6 +5,18 @@
  * Date: 06/02/19
  * Time: 09:45
  */
+
+/*$articles = array("Nom" => "D3 NRG 2019",
+"Prix" => 1849.99,
+"url" => "photo/D3-NRG.jpg",
+"desc" => "Le ski EVO est l\"évolution du ski ARC (plus large sur toute sa surface)
+Cela permet d\"avoir un ski plus rapide ainsi que plus stable.
+Vous ne perdrez pas en rotation dans les virages avec ce ski a d\"avantage de concavité.
+Ce ski a la caractéristique de tourner très rond, idéal pour tous les skieurs cherchant un ski performant mais pardonnant les erreurs "
+);*/
+
+
+
 $articles = array(
     array("id" => "1",
         "Nom" => "D3 EVO/NRG 2019",
