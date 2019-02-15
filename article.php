@@ -19,25 +19,6 @@ $article = GetProduit2($db, $produitid);
 
 ?>
 
-<!DOCTYPE html>
-
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waterski and French in The Alps</title>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu Condensed" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-          crossorigin="anonymous">
-    <link rel="stylesheet" href="boutique.css">
-</head>
-
-<body>
-
-<!--HEADER -->
 <?php include 'Header.php'; ?>
 
 
@@ -59,8 +40,4 @@ $article = GetProduit2($db, $produitid);
 
 <!--FOOTER -->
 <?php include 'Footer.php'; ?>
-
-
-</body>
-</html>
 

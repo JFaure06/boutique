@@ -6,6 +6,7 @@
  * Time: 08:53
  */
 
+
 /* ma fonction est composé d'une card qui reçois les information de mes articles*/
 function afficheCatalogue($articles)
 {
@@ -22,8 +23,8 @@ function afficheCatalogue($articles)
                 <h3 class="card-title"><?php echo $articles["Nom"]; ?></h3>
                 <p class="card-text btn btn-primary"><?php echo $articles["Prix"]; ?> $</p>
             </div>
-            <input type="checkbox" name="<?php echo $articles["idArticle"]; ?>" id="<?php echo $articles["idArticle"]; ?>"
-                   class="container-fluid d-flex justify-align-center"/>
+            <input type="checkbox" name="produit[]" id="<?php echo $articles["idArticle"]; ?>"
+                   value="<?php echo $articles["idArticle"]; ?>" class="container-fluid d-flex justify-align-center"/>
             <label for="case">Add to Card</label>
         </div>
     </div>

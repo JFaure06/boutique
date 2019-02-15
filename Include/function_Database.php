@@ -33,6 +33,8 @@ function GetProduit($connexionbdd, $produitid)
     return $result;
 }
 
+
+/* fonction avec requète*/
 function GetProduit2($connexionbdd, $produitid)
 {
     $sql = 'select * from Article where idArticle=?';
