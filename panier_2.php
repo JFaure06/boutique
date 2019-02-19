@@ -13,55 +13,127 @@ include_once 'Include/functions.php';
 require 'Include/function_Database.php';
 
 $db = MaConnexion();
+if (!isset($_SESSION['panier'])) {
+    $_SESSION['panier'] = [];
+}
 
 //Ajout un article au panier
-if (isset($_POST['ajoutArticle'])) {
-    foreach ($_POST['Article'] as $produitid) {
-        $articleSelect = GetProduit2($produitid);
-        $panierTemp = [
-            'id' => $articleSelect['idArticle'],
-            'img' => $articleSelect['Image'],
-            'name' => $articleSelect['Nom'],
-            'qte' => 1,
-            'price' => $articleSelect['Prix'],
-        ];
-        $_SESSION['panier'][] = $panierTemp;
+if (isset($_POST['ajoutPanier'])) {
+    foreach ($_POST['produit'] as $article) {
+
+
+        if (array_key_exists($article, $_SESSION['panier'])) {
+            //var_dump("maj");
+            $_SESSION['panier'][$article]['qte']++;
+        } else {
+//Sinon on ajoute le produit
+            //var_dump("ajout");
+            $articleSelect = GetProduit2($db, $article);
+
+            $_SESSION['panier'][$article] = [
+                'id' => $articleSelect['idArticle'],
+                'img' => $articleSelect['Image'],
+                'name' => $articleSelect['Nom'],
+                'qte' => 1,
+                'price' => $articleSelect['Prix'],
+                'Weight' => $articleSelect['Poids'],
+            ];
+
+
+            /*$_SESSION['panier'][$article]['id'] = $articleSelect['idArticle'];
+            $_SESSION['panier'][$article]['img'] = $articleSelect['Image'];
+            $_SESSION['panier'][$article]['name'] = $articleSelect['Nom'];*/
+
+
+        }
+
     }
 }
+//var_dump($_SESSION['panier']);
+
+// Modification des articles dans la session
+if (isset($_POST['modificationArticle'])) {
+//
+    foreach ($_POST['quantite'] as $id => $qts) {
+
+        $_SESSION['panier'][$id]['qte'] = $qts;
+
+    }
+
+}
+
+// Suppression d'un article dans la session
+if (isset($_POST['suppressionArticle'])) {
+    //
+    unset($_SESSION['panier'][$_POST['suppressionArticle']]);
+}
+
+// Suppression du panier
+if (isset($_POST['deletetocard'])) {
+
+    unset($_SESSION['panier']);
+    $_SESSION['panier'] = array();
+}
+
+// Code de listage et de calcul des totaux
+$ttc = MontantGlobal();
+
+//frais de port
+$fdp = calculFraisdeport();
 
 include 'Header.php';
 ?>
+<form method="post" action="panier_2.php">
 
-<table class="table">
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Nom</th>
-        <th>quantité</th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php
-    foreach ($_SESSION['panier'] as $articledupanier) {
-        echo '<tr>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>prix par article</th>
+            <th>quantité</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        foreach ($_SESSION['panier'] as $articledupanier) {
+            ?>
+            <tr>
                 <td>
-                    '.$articledupanier['id'].'
+                    <?= $articledupanier['id'] ?>
                 </td>
                 <td>
-                    '.$articledupanier['name'].'
+                    <?= $articledupanier['name'] ?>
                 </td>
                 <td>
-                    <input type="number" value="'.$articledupanier['qte'].'" >
+                    <?= number_format($articledupanier['price'] * $articledupanier['qte'], 2, ',', ' ') ?> $
                 </td>
-            </tr>';
-    }
-    ?>
-    </tbody>
-    <tfoot>
-    <tr>
-        <td></td>
-        <td></td>
-        <td>Total <?php echo number_format($total, 2, ',', ' ') ?> €</td>
-    </tr>
-    </tfoot>
-</table>
+                <td>
+                    <input type="number" name="quantite[<?= $articledupanier['id']; ?>]"
+                           value="<?= $articledupanier['qte']; ?>"/>
+                    <button name="suppressionArticle" type="submit" value="<?= $articledupanier['id']; ?>"
+                            class="btn btn-warning">delete
+                    </button>
+
+                </td>
+            </tr>
+            <?php
+        }
+        ?>
+        </tbody>
+        <tfoot>
+        <tr>
+
+            <td>Frais de port : <?= number_format($fdp, 2, ',', ' ') ?></td>
+
+        </tr>
+        <tr>
+            <td>Total <?= number_format($ttc, 2, ',', ' ') ?> $ ttc</td>
+        </tr>
+        </tfoot>
+    </table>
+    <input type="submit" name="modificationArticle" value="refresh" class="btn btn-dark">
+    <input type="submit" name="deletetocard" value="delete" class="btn btn-danger">
+
+</form>

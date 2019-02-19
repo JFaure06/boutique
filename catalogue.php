@@ -9,6 +9,7 @@ session_start();
 require 'Include/functions.php';
 include_once 'Include/database_WSFIA.php';
 include_once 'Include/function_Database.php';
+
 $db = MaConnexion();
 $catalogue = GetProduits($db);
 
@@ -17,7 +18,7 @@ include 'Header.php';
 
 <main>
     <div class="container-fluid">
-        <form method="post" action="panier.php">
+        <form method="post" action="panier_2.php">
             <input type="hidden" name="ajoutPanier">
             <div class="row">
 

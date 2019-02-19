@@ -133,11 +133,11 @@ function ajouterArticle($id, $Nom, $Qts, $Prix)
 {
 
 //Si le panier existe
-    if (creationPanier() /*&& !isVerrouille()*/) {
+    /*if (creationPanier() ) {*/
 //Si le produit existe déjà on ajoute seulement la quantité
         $positionProduit = array_search($id, $_SESSION['panier']);
 
-        if ($positionProduit !== false) {
+        if ($positionProduit != false) {
             $_SESSION['panier'][$id]['qts'] += $Qts;
         } else {
 //Sinon on ajoute le produit
@@ -148,8 +148,8 @@ function ajouterArticle($id, $Nom, $Qts, $Prix)
             ];
 
         }
-    } else
-        echo "Un problème est survenu veuillez contacter l'administrateur du site.";
+    /*} else
+        echo "Un problème est survenu veuillez contacter l'administrateur du site.";*/
 }
 
 
@@ -184,8 +184,29 @@ function supprimerArticle($id)
 function MontantGlobal()
 {
     $total = 0;
-    for ($i = 0; $i < count($_SESSION['panier']['Nom']); $i++) {
-        $total += $_SESSION['panier']['Qts'][$i] * $_SESSION['panier']['Prix'][$i];
+    foreach ($_SESSION['panier'] as $articledupanier) {
+        $total += ($articledupanier['price'] * $articledupanier['qte']);
     }
     return $total;
 }
+
+function calculFraisdeport(){
+    $poidspanier = 0;
+    foreach ($_SESSION['panier'] as $articledupanier) {
+        $poidspanier += $articledupanier['Poids'];
+
+    if ($poidspanier<500){
+        $fraisdeport = 5;
+    }
+    elseif ($poidspanier >= 500 && $poidspanier<2000){
+        $fraisdeport = $articledupanier['Poids'] * 0.1;
+
+    }else
+
+        $poidspanier = $articledupanier['Poids'] * 0;
+    }
+
+    return $fraisdeport;
+}
+
+
